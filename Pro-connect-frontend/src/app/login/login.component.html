@@ -1,0 +1,25 @@
+<br><br><br>
+
+<div class="container">
+    <div class="loginForm" style="background-color: white !important;">
+        <h2 style="display: flex;justify-content: center;">Login</h2>
+        <div class="loginFormFieldsContainer">
+            <div class="containerINner">
+                <div class="inputContainers">
+                    <input [(ngModel)]="email"type="text" id="login" class="fadeIn second" name="login" placeholder="email">
+                    <input [(ngModel)]="password" type="password" id="password" class="fadeIn third" name="login" placeholder="password"><br>
+                    <p style="color: red;" *ngIf="errorMessage">Message: {{errorMessage}}</p>
+                    
+                </div>
+
+                <br><br>
+                <div class="buttonContainer">
+                    <input (click)="toggleLogin()" id="myBtn" style="background-color: #39ace7;" type="submit" class="fadeIn fourth"
+                        value="Log In">
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

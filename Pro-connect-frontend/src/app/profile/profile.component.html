@@ -1,0 +1,275 @@
+<br><br><br>
+
+
+<!-- REMAKE HERE  -->
+
+
+<div *ngIf="profileController.isProfilefetched" class="profileContainer">
+
+    <mat-card>
+        <div class="coverImage">
+            <img *ngIf="profileController.profileData['photo_path']==''"
+                src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" alt="">
+            <img *ngIf="profileController.profileData['photo_path']"
+                src="{{appController.fileServerUrl}}{{profileController.profileData['photo_path']}}" alt="">
+        </div>
+        <div class="profileDataContainer">
+
+            <h2>{{profileController.profileData["firstname"]}} {{profileController.profileData["lastname"]}}</h2>
+            <p style="font-style: italic;">"{{[profileController.profileData['tagline']]}}" Country: {{profileController.profileData["country"]}}</p>
+            <p>Email: {{profileController.profileData["email"]}}</p>
+            <p>mobile: {{profileController.profileData["mobile"]}}</p>
+            <p>dob: {{profileController.profileData["dob"]}}</p>
+            <button mat-raised-button color="primary" (click)="openEditProfileModal()">Edit Profile</button>
+       
+        </div>
+    </mat-card>
+    <br><br><br>
+    <mat-card>
+        <div class="workExperience__header">
+            <h1>Work Experience</h1>
+            <button mat-raised-button color="primary" (click)="openWorkModal()">Add</button>
+        </div>
+        <div *ngFor="let work of profileController.profileData['work_history']" class="work__card">
+            <mat-accordion>
+                <mat-expansion-panel hideToggle>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            <h2>{{work['company_name']}}: {{work["position"]}}</h2>
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <p>Position: {{work["position"]}}</p>
+                    <p>start date: {{work["start_date"]}}</p>
+                    <p>end date: {{work["end_date"]}}</p>
+                    <!-- <button mat-raised-button color="primary">Edit</button> -->
+                    <button mat-raised-button color="warn"
+                        (click)="deleteWorkExperience(work['id'])">Delete</button>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
+    </mat-card>
+
+    <br><br><br>
+
+    <mat-card>
+        <div class="workExperience__header">
+            <h1>Education</h1>
+            <button mat-raised-button color="primary" (click)="openEducationModal()">Add</button>
+
+        </div>
+        <div *ngFor="let education of profileController.profileData['education_history']" class="work__card">
+            <mat-accordion>
+                <mat-expansion-panel hideToggle>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            <h2>{{education['college_name']}}: {{education['degree']}}</h2>
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <p>Degree: {{education['degree']}}</p>
+                    <p>Specialization: {{education["specialization"]}}</p>
+                    <p>start date: {{education["start_date"]}}</p>
+                    <p>end date: {{education["end_date"]}}</p>
+                    <button class="btn btn-danger" (click)="deleteEducationHistory(education['id'])">Delete</button>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
+    </mat-card>
+
+</div>
+
+
+
+<!-- OLD PAGE  -->
+
+<!-- <div *ngIf="!profileController.isProfilefetched" class="spinner"
+    style="display: flex;justify-content: center;margin-top: 30vh;">
+    <mat-spinner></mat-spinner>
+
+</div>
+
+
+<div *ngIf="profileController.isProfilefetched" class="container">
+
+    <div class="container__profileContainer">
+        <h3>Profile details </h3>
+        <img *ngIf="profileController.profileData['photo_path']==''"
+            src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" alt="">
+        <img *ngIf="profileController.profileData['photo_path']"
+            src="{{appController.fileServerUrl}}{{profileController.profileData['photo_path']}}" alt="">
+
+        <br><br>
+
+
+
+        <div *ngIf="currentIndex==1" class="editProfileContainer">
+            <mat-form-field class="example-full-width">
+                <mat-label>First Name</mat-label>
+                <input type="text" [(ngModel)]="firstname" value="{{profileController.profileData['firstname']}}"
+                    matInput placeholder="Ex. pat@example.com">
+            </mat-form-field><br>
+            <mat-form-field class="example-full-width">
+                <mat-label>Last Name</mat-label>
+                <input type="text" [(ngModel)]="lastname" value="{{profileController.profileData['lastname']}}" matInput
+                    placeholder="Ex. pat@example.com">
+            </mat-form-field><br>
+            <mat-form-field class="example-full-width">
+                <mat-label>TagLine</mat-label>
+                <input type="text" [(ngModel)]="tagline" value="{{profileController.profileData['lastname']}}" matInput
+                    placeholder="Ex. pat@example.com">
+            </mat-form-field><br>
+            <mat-form-field class="example-full-width">
+                <mat-label>Email</mat-label>
+                <input type="email" [(ngModel)]="email" value="{{profileController.profileData['email']}}" matInput
+                    placeholder="Ex. pat@example.com">
+            </mat-form-field><br>
+            <mat-form-field class="example-full-width">
+                <mat-label>Mobile</mat-label>
+                <input type="number" [(ngModel)]="mobile" value="{{profileController.profileData['mobile']}}" matInput
+                    placeholder="Ex. pat@example.com">
+            </mat-form-field><br>
+            <mat-form-field class="example-full-width">
+                <mat-label>DOB</mat-label>
+                <input type="date" [(ngModel)]="dob" matInput value="{{profileController.profileData['dob']}}"
+                    placeholder="Ex. 12-14-2006">
+            </mat-form-field><br>
+            <mat-form-field class="example-full-width">
+                <mat-label>Country</mat-label>
+                <input type="text" [(ngModel)]="country" matInput value="{{profileController.profileData['country']}}"
+                    placeholder="eg: INDIA">
+            </mat-form-field> <br>
+            <label for="file">Upload Profile Picture: </label>
+            <input (change)="addFileToProfileList($event)" type="file" id="file">
+            <br>
+            <button type="button" class="btn btn-success" (click)="updateProfile()">Save Profile</button>
+
+        </div>
+
+        <div *ngIf="currentIndex==0" class="profileFieldsView">
+            <h4>{{profileController.profileData["firstname"]}} {{profileController.profileData["lastname"]}}</h4>
+            <p style="font-style: italic;">"{{[profileController.profileData['tagline']]}}"</p>
+            <p>Email: {{profileController.profileData["email"]}}</p>
+            <p>mobile: {{profileController.profileData["mobile"]}}</p>
+            <p>dob: {{profileController.profileData["dob"]}}</p>
+            <p>Country: {{profileController.profileData["country"]}}</p>
+            <button mat-raised-button color="primary" (click)="currentIndex=1">Edit Profile</button>
+        </div>
+
+    </div>
+
+
+
+    <br><br>
+
+    <div class="container__workExperienceContainer">
+        <h4>Work Experience <button mat-raised-button color="primary" (click)="workExperienceModelOpen=true"
+                *ngIf="!workExperienceModelOpen">Add work</button>
+        </h4>
+
+        <div *ngIf="workExperienceModelOpen" class="wemodel">
+            <mat-form-field class="example-full-width">
+                <mat-label>Company Name</mat-label>
+                <input type="text" [(ngModel)]="company_name" matInput placeholder="Ex. pat@example.com">
+            </mat-form-field><br>
+            <mat-form-field class="example-full-width">
+                <mat-label>Position</mat-label>
+                <input type="text" [(ngModel)]="position" matInput placeholder="Ex. pat@example.com">
+            </mat-form-field><br>
+            <mat-form-field class="example-full-width">
+                <mat-label>Start Date</mat-label>
+                <input type="date" [(ngModel)]="start_date" matInput placeholder="Ex. pat@example.com">
+            </mat-form-field><br>
+            <mat-form-field class="example-full-width">
+                <mat-label>End Date</mat-label>
+                <input type="date" [(ngModel)]="end_date" matInput placeholder="Ex. pat@example.com">
+            </mat-form-field><br>
+
+            <button type="button" class="btn btn-success" (click)="addWorkExperience()">Add Work</button>
+            <button type="button" class="btn btn-danger" (click)="workExperienceModelOpen=false">Cancel</button>
+
+        </div>
+
+        <div *ngIf="!workExperienceModelOpen">
+            <div *ngFor="let work of profileController.profileData['work_history']" class="work__card">
+                <mat-accordion>
+                    <mat-expansion-panel hideToggle>
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                <h2>{{work['company_name']}}: {{work["position"]}}</h2>
+                            </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <p>Position: {{work["position"]}}</p>
+                        <p>start date: {{work["start_date"]}}</p>
+                        <p>end date: {{work["end_date"]}}</p>
+                        <button mat-raised-button color="warn"
+                            (click)="deleteWorkExperience(work['id'])">Delete</button>
+                    </mat-expansion-panel>
+                </mat-accordion>
+            </div>
+        </div>
+    </div>
+
+
+
+    <br><br>
+
+
+    <div class="container__educationContainer">
+        <h4>Education <button mat-raised-button color="primary" *ngIf="!educationModelOpen"
+                (click)="educationModelOpen=true">Add Education</button>
+        </h4>
+
+
+        <div *ngIf="educationModelOpen">
+            <mat-form-field class="example-full-width">
+                <mat-label>College Name</mat-label>
+                <input type="text" [(ngModel)]="college" matInput placeholder="Ex. pat@example.com">
+            </mat-form-field><br>
+            <mat-form-field class="example-full-width">
+                <mat-label>Degree</mat-label>
+                <input type="text" [(ngModel)]="degree" matInput placeholder="Ex. pat@example.com">
+            </mat-form-field><br>
+            <mat-form-field class="example-full-width">
+                <mat-label>Specialization</mat-label>
+                <input type="text" [(ngModel)]="special" matInput placeholder="Ex. pat@example.com">
+            </mat-form-field><br>
+            <mat-form-field class="example-full-width">
+                <mat-label>Start Date</mat-label>
+                <input type="date" [(ngModel)]="start_date" matInput placeholder="Ex. pat@example.com">
+            </mat-form-field><br>
+            <mat-form-field class="example-full-width">
+                <mat-label>End Date</mat-label>
+                <input type="date" [(ngModel)]="end_date" matInput placeholder="Ex. pat@example.com">
+            </mat-form-field><br>
+
+            <button type="button" class="btn btn-success" (click)="addEducationHistory()">Add Education</button>
+            <button type="button" class="btn btn-danger" (click)="educationModelOpen=false">Cancel</button>
+
+        </div>
+
+        <div *ngIf="!educationModelOpen">
+            <div *ngFor="let education of profileController.profileData['education_history']" class="work__card">
+                <mat-accordion>
+                    <mat-expansion-panel hideToggle>
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                <h2>{{education['college_name']}}: {{education['degree']}}</h2>
+                            </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <p>Degree: {{education['degree']}}</p>
+                        <p>Specialization: {{education["specialization"]}}</p>
+                        <p>start date: {{education["start_date"]}}</p>
+                        <p>end date: {{education["end_date"]}}</p>
+                        <button class="btn btn-danger" (click)="deleteEducationHistory(education['id'])">Delete</button>
+                    </mat-expansion-panel>
+                </mat-accordion>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</div>
+
+
+<br><br><br><br> -->

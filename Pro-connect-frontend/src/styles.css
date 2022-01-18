@@ -1,0 +1,26 @@
+/* You can add global styles to this file, and also import other style files */
+:root {
+    --height: 70vh;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
+
+/* background-image: url("https://st.depositphotos.com/1006728/2478/i/950/depositphotos_24789495-stock-photo-white-background.jpg");
+background-repeat: no-repeat;
+background-size: cover; */
+background-color: rgb(247, 247, 247);
+}
+.successMessage {
+    background-color: green;
+    color: white;
+    z-index: 999999999999;
+}
+
+.errorMessage {
+    background-color: red;
+    color: white;
+    z-index: 999999999999;
+
+}
+
+@import "~@angular/material/prebuild-themes/indigo-pink.css"

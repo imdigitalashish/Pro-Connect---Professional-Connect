@@ -1,0 +1,17 @@
+.container__profileContainer > img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+
+
+.work__card {
+    padding: 20px;
+    border-radius: 30px;
+}
+
+
+.container {
+    display: flex;
+    justify-content: space-evenly;
+}

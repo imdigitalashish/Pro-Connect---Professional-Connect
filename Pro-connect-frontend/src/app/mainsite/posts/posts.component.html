@@ -1,0 +1,56 @@
+<div *ngIf="appController.isListOfPostFetched" class="listOfPosts">
+   
+<br>
+    <div *ngFor="let a of appController.data;let indexOfElement=index" class="posts">
+
+        <mat-card  style="padding: 0;" *ngIf="a['active']" class="singleCardComponent">
+            
+            <div class="card__name">
+                <div class="card__name__heading" style="display: flex;align-items: flex-end;align-content: flex-end;">
+                    <img src="http://localhost:9090/uploads/profilePicture/DSC_0020.jpg" style="width: 40px;height: 40px;border-radius: 50%;" alt="">
+                    <p style="margin-left: 10px;">{{a.name}}</p>
+                </div>
+                <br>
+                <img *ngIf="a['filetype']=='image'" src="{{appController.fileServerUrl}}{{a.media}}" alt="">
+                <video *ngIf="a['filetype']=='video'" width="320" height="240" controls>
+                    <source src="{{appController.fileServerUrl}}{{a['media']}}">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="card__info">
+                    <div class="card_info_and_stats">
+                        <div class="cardInfo_detail">
+                            <p style="margin-bottom: 0;">{{a.text}}</p>
+                        </div>
+                        <div class="cardInfo_stats">
+                            <p>like: {{a.likes}}</p>
+                        </div>
+                    </div>
+               
+                   
+                    <div style="display: flex;">
+                        <!-- <p>Likes: {{a.likes}} <button (click)="updateLike(a.id, indexOfElement)"
+                                mat-icon-button color="primary"
+                                aria-label="Example icon button with a menu icon">
+                                <mat-icon>thumb_up </mat-icon>
+                            </button>
+                        </p> -->
+
+                        <button  (click)="updateLike(a.id, indexOfElement)" mat-button style="color: rgb(0, 132, 255);"><mat-icon>thumb_up</mat-icon> Like</button>
+                        <button  (click)="openCommentModal(a.id)" mat-button style="color: rgb(63, 199, 45);"><mat-icon>chat</mat-icon> Comments</button>
+
+                        <br>
+                        <div *ngIf="appController.userLoggedIn">
+                            <div *ngIf="appController.CurrentUser['id'] == a.user_id">
+                                <button class="btn btn-danger" (click)="deletePost(a.id, indexOfElement)">Delete</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </mat-card>
+    </div>
+
+</div>

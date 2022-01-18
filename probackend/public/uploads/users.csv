@@ -1,0 +1,3 @@
+id,firstname,lastname,country,email,mobile,dob,password,activate,tagline,remember_token,created_at,updated_at
+1,Ashish,"Kumar Verma","INDIA A",imdigitalashish@gmail.com,9920193246,2021-12-12,$2y$10$GVkuEctpz8vO5HoZFHW5iu84wpV/GddNgQPAcDtMdqMZq248IwDWG,1,"Skill India Tagline",Om6P8GASz5l5,2021-12-24T16:18:52.000000Z,2021-12-25T09:50:06.000000Z
+2,FIRST,NAME,"American Samoa",EMAIL@GMAIL>COM,39287498324,2021-12-03,$2y$10$mp6G9wTDvCYen3xGfsbef.syHe.zhlCAPsaVIu92O8nUS2rBl0kOq,1,"Angular Material SUcks",a9TyDsm6lcRN,2021-12-24T16:41:16.000000Z,2021-12-24T16:41:54.000000Z

@@ -1,0 +1,14 @@
+<div class="landingPageContainer">
+    <img style="width: 40%;margin-top: 4vh;" src="http://localhost:9090/uploads/intropage.svg" alt="">
+
+    <div class="authentication">
+        <h1>Welcome to Pro Connect</h1>
+        <p>Make Professional Connects</p>
+        <div class="authentication__input">
+            <input type="text" #email placeholder="Email or Mobile Number" />
+            <input type="text" #firstName placeholder="First Name" />
+            <input type="text" #lastName placeholder="Last Name" />
+            <button (click)="gotoRegisterPage(email, firstName, lastName)">Pro Connect Now</button>
+        </div>
+    </div>
+</div>

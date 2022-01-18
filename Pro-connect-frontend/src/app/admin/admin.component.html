@@ -1,0 +1,16 @@
+<div class="mainContainer">
+    <div class="leftSection">
+        <div>
+            <p (click)="selectIndex=0">list of users</p>
+            <p (click)="selectIndex=1">list of all posts</p>
+         <p><a href="http://localhost:8000/api/admin/downloadUsers" style="text-decoration: none;" target="_blank">Download all users (csv)</a></p>
+         <p><a href="http://localhost:8000/api/admin/downloadPosts" style="text-decoration: none;" target="_blank">Download all posts (csv)</a></p>
+            
+        </div>
+   
+    </div>
+    <div class="rightSection">
+        <app-list-users *ngIf="selectIndex==0"></app-list-users>
+        <app-list-posts *ngIf="selectIndex==1"></app-list-posts>
+    </div>
+</div>

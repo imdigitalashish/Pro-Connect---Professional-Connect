@@ -1,0 +1,125 @@
+<div class="mainContainer">
+
+    <div *ngIf="this.profileController.isProfilefetched" class="container__profileContainer">
+
+        <mat-card style="padding: 0px;">
+
+            <div style="display: flex; justify-content: center; background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUc1ZCIQASxVgdExYmeElUuYd58bhx9ba9JDd8eXt9hW6wLP_WqL6M5vjaxiXktAmMMEc&usqp=CAU');height: 10vh;"
+                class="coverImage">
+                <img style="width: 100px;height: 100px;border-radius: 50%;margin-top: 3%;"
+                    src="{{this.appController.fileServerUrl}}{{this.profileController.profileData['photo_path']}}" alt="">
+            </div>
+            <div class="cardInnerContent">
+                <div class="card__content">
+                    <h2>{{this.appController.CurrentUser['firstname']}} {{this.appController.CurrentUser['lastname']}}</h2>
+                    <p>"{{this.appController.CurrentUser['tagline']}}"</p>
+                </div>
+                <div class="buttonContainers">
+                    <button mat-flat-button (click)="openDialog()" color="primary">Create a post</button>
+                    <button mat-flat-button style="background-color: green;color: white;" routerLink="/profile">Edit
+                        Profile</button>
+                </div>
+
+            </div>
+
+        </mat-card>
+
+
+    </div>
+
+    <div id="containerListPosts" class="container__listOfPostContainer">
+
+        <!-- <div *ngIf="appController.isListOfPostFetched" class="listOfPosts">
+
+
+            <div *ngFor="let a of appController.data;let indexOfElement=index" class="posts">
+                <div *ngIf="a['active']" class="singleCardComponent">
+                    <div class="card__name">
+                        <img *ngIf="a['filetype']=='image'" src="{{appController.fileServerUrl}}{{a['media']}}" alt="">
+                        <video *ngIf="a['filetype']=='video'" width="320" height="240" controls>
+                            <source src="{{appController.fileServerUrl}}{{a['media']}}">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div class="card__info">
+                            <p style="margin-bottom: 0;">{{a["text"]}}</p>
+                            <p class="card__info__text">{{a["name"]}}</p>
+                            <div style="display: flex;">
+                                <p>Likes: {{a["likes"]}} <button (click)="updateLike(a['id'], indexOfElement)"
+                                        mat-icon-button color="primary"
+                                        aria-label="Example icon button with a menu icon">
+                                        <mat-icon>thumb_up</mat-icon>
+                                    </button>
+                                </p>
+                                <br>
+                                <div *ngIf="appController.userLoggedIn">
+                                    <div *ngIf="appController.CurrentUser['id'] == a['user_id']">
+                                        <button class="btn btn-danger" (click)="deletePost(a['id'], indexOfElement)">Delete</button>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        
+        </div> -->
+
+        <div  class="makePost" style="display: flex;justify-content: center;">
+     
+            <mat-card style="width: 79%;padding: 0;">
+                <div class="submitText">
+                    <img  *ngIf="this.profileController.isProfilefetched" style="width: 50px;height: 50px;border-radius: 50%;" src="{{this.appController.fileServerUrl}}{{this.profileController.profileData['photo_path']}}" alt="">
+                    <button (click)="openDialog();" style="margin-left: 10px;width: 100%;">Start A Post</button>
+                </div>
+                <div class="buttonHolders">
+                    <button mat-button><mat-icon style="color: #70b5f9;">photo</mat-icon> Photo</button>
+                    <button mat-button><mat-icon style="color: #51ce62;">smart_display</mat-icon> Video</button>
+
+                </div>
+            </mat-card>
+        
+        </div>
+
+
+        <app-posts></app-posts>
+    </div>
+
+
+    <div class="container__SideBar">
+        <h2>People you may know</h2>
+       
+        <mat-card>
+            <div style="width: 30px;height: 30px;background-color: grey;border-radius: 50%;"></div>Shubham
+        </mat-card>
+        <mat-card>
+            <div style="width: 30px;height: 30px;background-color: grey;border-radius: 50%;"></div>Advaith
+        </mat-card>
+
+        <mat-card>
+            <div style="width: 30px;height: 30px;background-color: grey;border-radius: 50%;"></div>Pritam
+        </mat-card>
+        <mat-card>
+            <div style="width: 30px;height: 30px;background-color: grey;border-radius: 50%;"></div>Nidhanshu
+        </mat-card>
+        <mat-card>
+            <div style="width: 30px;height: 30px;background-color: grey;border-radius: 50%;"></div>Aliya
+        </mat-card>
+        <mat-card>
+            <div style="width: 30px;height: 30px;background-color: grey;border-radius: 50%;"></div>Shri Hari
+        </mat-card>
+        <mat-card>
+            <div style="width: 30px;height: 30px;background-color: grey;border-radius: 50%;"></div>Juned
+        </mat-card>
+
+    </div>
+
+
+
+
+
+
+
+</div>

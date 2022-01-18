@@ -1,0 +1,64 @@
+
+
+.registerForm {
+    height: var(--height);
+    width: auto;
+    display: flex;
+    transition: 0.2s ease-in-out;
+    box-shadow: 10px 5px 5px silver;
+
+}
+
+
+.registerForm__right {
+    background-image: url("https://source.unsplash.com/Mv9hjnEUHR4/600x800");
+    height: var(--height);
+    background-repeat: no-repeat;
+    width: 30vw;
+}
+
+.leftform__heading {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.registerForm__left {
+    width: 70vh;
+    padding: 10px;
+}
+
+.registerForm__left  input {
+    border-radius: 30px;
+    padding: 15px;
+    width: 30vh;
+
+}
+
+
+.registerForm__left  select {
+    border-radius: 30px;
+    padding: 15px;
+    width: 30vh;
+
+}
+
+.row {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.submitButton {
+    width: 60vh;
+    padding: 10px;
+    border-radius: 50px;
+    background-color: #4e73df;
+    color: white;
+    font-weight: bold;
+}

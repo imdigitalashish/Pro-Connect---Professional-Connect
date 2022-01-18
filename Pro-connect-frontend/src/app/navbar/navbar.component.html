@@ -1,0 +1,75 @@
+<!-- <div class="navbar">
+    <div class="header">
+        <h1 style="user-select: none; cursor: pointer;" routerLink="">Pro Connect</h1>
+    </div>
+    <div *ngIf="!this._appController.userLoggedIn" class="header__auth">
+        <p routerLink="register">Register</p>
+        <p routerLink="login">Login</p>
+    </div>
+    <div *ngIf="this._appController.userLoggedIn" class="header__auth">
+        <p routerLink="admin">Admin</p>
+        <p routerLink="profile">Profile</p>
+        <p (click)="this._appController.userLoggedIn=false">Logout</p>
+    </div>
+
+
+</div> -->
+
+<!-- <mat-toolbar id="mattoolbarnav" color="primary">
+    <mat-toolbar-row style="display: flex;justify-content: space-between;">
+        <span routerLink=""><img style="width: 60px;height: 60px;" src="http://localhost:9090/uploads/proconnecticon.png" alt=""> Pro Connect</span>
+
+        <div *ngIf="!this._appController.userLoggedIn" style="width: 10%;display: flex;justify-content: space-between;"  class="thishere">
+          
+            <span style="align-items: center;display: flex;" routerLink="register"><mat-icon>app_registration</mat-icon>Register</span>
+            <span style="align-items: center;display: flex;" routerLink="login"><mat-icon>login</mat-icon>Login</span>
+        </div>
+        <div *ngIf="this._appController.userLoggedIn" style="width: 20%;display: flex;justify-content: space-between;"  class="thishere">
+          
+            <span style="align-items: center;display: flex;" routerLink="admin"> <mat-icon>admin_panel_settings</mat-icon> Admin</span>
+            <span style="align-items: center;display: flex;" routerLink="profile"><mat-icon>person</mat-icon>Profile</span>
+            <span style="align-items: center;display: flex;" (click)="logout()"><mat-icon>logout</mat-icon>Logout</span>
+        </div>
+
+
+
+
+
+    </mat-toolbar-row>
+
+</mat-toolbar> -->
+
+
+
+<mat-toolbar style="display: flex;justify-content: space-between;position: fixed;top: 0;z-index: 99;" class="mat-elevation-z3">
+    <div class="iconHolder">
+        <span routerLink=""><img style="width: 60px;height: 60px;"
+                src="http://localhost:9090/uploads/proconnecticon.png" alt="">roconnect</span>
+
+    </div>
+
+    <div *ngIf="!this._appController.userLoggedIn" class="authHolders">
+        <div routerLink="register" class="register">
+            Register
+        </div>
+        <div routerLink="login" class="authHoldere__login">
+            Login
+        </div>
+    </div>
+    
+
+    <div *ngIf="this._appController.userLoggedIn">
+        <div class="" *ngIf="this.profileService.isProfilefetched">
+            <img [matMenuTriggerFor]="menu" style="width: 40px;height: 40px;border-radius: 50px;"
+                src="{{this._appController.fileServerUrl}}{{this.profileService.profileData['photo_path']}}" alt="">
+            <mat-menu #menu="matMenu">
+                <button routerLink="profile" mat-menu-item>Profile</button>
+                <button (click)="logout()" mat-menu-item>Logout</button>
+            </mat-menu>
+        </div>
+    </div>
+
+
+</mat-toolbar>
+
+<br><br><br>

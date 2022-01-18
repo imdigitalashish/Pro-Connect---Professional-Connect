@@ -1,0 +1,35 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">first</th>
+        <th scope="col">Last</th>
+        <th scope="col">country</th>
+        <th scope="col">email</th>
+        <th scope="col">mobile</th>
+        <th scope="col">dob</th>
+        <th scope="col">activate</th>
+        <th scope="col">created_at</th>
+        <th scope="col">updated_at</th>
+        <th scope="col">activate/deactivate</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of adminService.allUsers">
+        <th>{{user["id"]}}</th>
+        <td>{{user["firstname"]}}</td>
+        <td>{{user["lastname"]}}</td>
+        <td>{{user["country"]}}</td>
+        <td>{{user["email"]}}</td>
+        <td>{{user["mobile"]}}</td>
+        <td>{{user["dob"]}}</td>
+        <td>{{user["activate"]}}</td>
+        <td>{{user["created_at"]}}</td>
+        <td>{{user["updated_at"]}}</td>
+        <td *ngIf="user['activate']"><button (click)="adminService.activate_or_deactivate_account('deactivate', user['id'])" class="btn btn-danger">Deactivate</button></td>
+        <td *ngIf="!user['activate']"><button  (click)="adminService.activate_or_deactivate_account('activate', user['id'])" class="btn btn-success">Activate</button></td>
+      </tr>
+   
+    </tbody>
+  </table>

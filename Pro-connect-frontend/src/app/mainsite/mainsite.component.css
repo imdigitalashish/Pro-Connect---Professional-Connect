@@ -1,0 +1,187 @@
+
+.uploadFile {
+    display: flex;
+    justify-content: center;
+}
+
+.uploadFileContent {
+    padding: 20px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.uploadFileContent > input[type='text'] {
+    padding: 10px;
+
+}
+
+.uploadFileContentContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.posts {
+    display: flex;
+    justify-content: center;
+}
+.singleCardComponent {
+    width: 25vw;
+    /* background-color: rgb(240, 232, 232); */
+    margin-bottom: 20px;
+    border-radius: 30px;
+    padding: 6px;
+    animation: postAnimation 2s forwards;
+}
+
+
+@media (max-width: 700px) {
+    .container__profileContainer {
+        display: none;
+    }
+
+    .container__listOfPostContainer {
+        width: 90vw !important;
+    }
+    .container__SideBar {
+        display: none;
+    }
+}
+
+@keyframes postAnimation {
+
+    0% {
+        transform: translateY(80vh);
+    }
+
+    100% {
+        transform: translateY(0vh);
+
+    }
+
+    
+}
+.card__name {
+    justify-content: center;
+    background: white;
+    margin: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.card__name > img {
+
+    width: 25vw;
+
+}
+
+.card__name > video {
+
+    width: 23vw;
+
+}
+
+
+
+.card__info {
+    padding: 9px;
+}
+
+.card__info__text {
+    font-size:0.8em;
+}
+
+
+
+.mainContainer {
+    padding: 12px;
+    display: flex;
+    justify-content: center;
+}
+
+.container__profileContainer {
+    flex: 0.3;
+    align-items: flex-end;
+    justify-content: flex-end;
+    align-content: flex-end;
+}
+.container__listOfPostContainer {
+    margin: 20px;
+    width: 40vw;
+}
+.container__SideBar {
+    flex: 0.3;
+    
+}
+
+.container__SideBar > mat-card {
+    margin: 3px;
+}
+
+
+.card__content {
+    margin-top: 7vh;
+}
+
+.card__content > h2 {
+    display: flex;
+    justify-content: center;
+}
+
+.card__content > p {
+    display: flex;
+    justify-content: center;
+    font-style: italic;
+
+}
+
+.buttonContainers {
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+
+.cardInnerContent {
+    padding: 10px;
+}
+/* .container__listOfPostContainer::-webkit-scrollbar {
+    display: none;
+}
+.container__listOfPostContainer {
+    overflow: scroll;
+    height: 85vh;
+} */
+/* .container__SideBar::-webkit-scrollbar {
+    display: none;
+}
+
+.container__SideBar {
+    overflow: scroll;
+    height: 85vh;
+
+
+} */
+
+.submitText {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.submitText > button {
+    border-radius: 20px;
+    outline: none;
+    border: 1px solid grey;
+    background-color: white;
+    padding: 10px 10px 10px 0px;
+}
+
+.buttonHolders {
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+    padding-top: 10px;
+    background: rgb(235, 235, 235);
+}

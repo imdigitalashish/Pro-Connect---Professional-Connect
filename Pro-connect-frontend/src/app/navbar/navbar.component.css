@@ -1,0 +1,61 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    /* margin: 10px; */
+    padding: 20px;
+    /* border-radius: 20px; */
+    background-color: rgb(238, 229, 229);
+    position: fixed;
+    top: 0;
+}
+
+.header__auth {
+    display: flex;
+    width: 10%;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.2em;
+}
+
+.header__auth > p {
+    cursor: pointer;
+    user-select: none;
+}
+
+#mattoolbarnav span {
+    user-select: none;
+    cursor: pointer;
+}
+
+.iconHolder {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    text-align: end;
+    user-select: none;
+}
+
+.register {
+    border: 1px solid #097af9;
+    padding: 9px;
+    font-weight: 400;
+    font-size: 20px;
+    color: #097af9;
+    border-radius: 50px;
+    user-select: none;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.authHolders {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+
+}
+
+.authHoldere__login {
+    user-select: none;
+    cursor: pointer;
+}

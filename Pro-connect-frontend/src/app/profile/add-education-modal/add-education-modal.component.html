@@ -1,0 +1,31 @@
+<div style="width: 30vw;">
+    <h2>Add Education</h2>
+    <mat-form-field style="width: 100%;" appearance="outline">
+        <mat-label>College Name</mat-label>
+        <input type="text" [(ngModel)]="college" matInput placeholder="Ex. pat@example.com">
+    </mat-form-field><br>
+    <mat-form-field  style="width: 100%;" appearance="outline" class="example-full-width">
+        <mat-label>Degree</mat-label>
+        <input type="text" [(ngModel)]="degree" matInput placeholder="Ex. pat@example.com">
+    </mat-form-field><br>
+    <mat-form-field style="width: 100%;" appearance="outline" class="example-full-width">
+        <mat-label>Specialization</mat-label>
+        <input type="text" [(ngModel)]="special" matInput placeholder="Ex. pat@example.com">
+    </mat-form-field><br>
+    <mat-form-field class="example-full-width" style="width: 100%;" appearance="outline">
+        <mat-label>Start Date</mat-label>
+        <input type="date" [(ngModel)]="start_date" matInput placeholder="Ex. pat@example.com">
+    </mat-form-field><br>
+    <mat-form-field class="example-full-width" style="width: 100%;" appearance="outline">
+        <mat-label>End Date</mat-label>
+        <input type="date" [(ngModel)]="end_date" matInput placeholder="Ex. pat@example.com">
+    </mat-form-field><br>
+
+    <!-- <button mat-raised-button color="primary" (click)="currentIndex=1">Save Profile</button> -->
+    <div style="display: flex;justify-content: space-between;">
+        <button type="button" class="btn btn-success" (click)="addEducationHistory()">Add Education</button>
+        <button type="button" class="btn btn-danger">Cancel</button>
+    </div>
+
+
+</div>

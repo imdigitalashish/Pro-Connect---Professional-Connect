@@ -1,0 +1,55 @@
+<br><br><br>
+
+<div class="container">
+    
+    <div class="registerForm">
+        <div class="registerForm__right">
+
+        </div>
+        <div class="registerForm__left">
+            <div class="leftform__heading">
+                <h3>Create a Account</h3>
+            </div>
+            <br>
+            <div class="row">
+                <input [(ngModel)]="firstName" required type="text" placeholder="First Name">
+                <input [(ngModel)]="lastname" required type="text" placeholder="Last Name">
+
+            </div>
+            <br><br>
+            <div class="row">
+                <input [(ngModel)]="email" required type="email" placeholder="Email">
+                <input [(ngModel)]="mobile" required type="number" placeholder="Mobile">
+
+            </div><br><br>
+            <label style="margin-left: 3%;" for="cars">Choose a country:</label>
+
+            <select [(ngModel)]="country" style="margin-left: 10px;" id="cars" name="cars">
+                <option *ngFor="let a of countryList" value="{{a}}">{{a}}</option>
+
+            </select>
+            <br> <br>
+            <label style="margin-left: 3%;" for="cars">Date of Birth:</label>
+
+            <input [(ngModel)]="dateOfBirth" placeholder="date of birth" style="margin-left: 3%;" type="date">
+            <br><br>
+            <div class="row">
+                <input [(ngModel)]="password" required type="password" placeholder="Password">
+                <input [(ngModel)]="confirmPassword" required type="password" placeholder="Confirm Password">
+
+            </div>
+            <br><br>
+            <p *ngIf="errorMessage" style="color: red;margin-left: 3%;">Message {{errorMessage}} </p>
+            <div class="footer">
+                <button class="submitButton" (click)="load()">Submit</button>
+
+            </div>
+        
+
+        </div>
+    </div>
+   
+    
+</div>
+
+

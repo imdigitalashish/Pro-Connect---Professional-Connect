@@ -1,0 +1,63 @@
+.landingPageContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 4%;
+}
+
+
+.authentication {
+    margin-left: 4vw;
+    margin-top: 10vh;
+}
+
+.authentication > h1 {
+    font-size: xx-large;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+
+.authentication > p {
+    font-size: 24px;
+    color: rgba(0, 0, 0, 0.3);
+}
+
+.authentication__input {
+    margin-top: 40px;
+
+}
+.authentication__input > input[type="text"] {
+    padding: 14px;
+    border-radius: 20px;
+    width: 20vw;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    justify-content: space-evenly;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.authentication__input > input[type="text"]:focus {
+    padding: 14px;
+    border-radius: 20px;
+    outline: none;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    transition: all 0.6s;
+    justify-content: space-evenly;
+    border: 1px solid rgba(0, 0, 0, 0.3) !important;
+    box-shadow: -2px -2px 2px 2px rgba(0, 0, 0, 0.2),2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.authentication__input > button {
+    border-radius: 30px;
+    padding: 10px;
+    width: 20vw;
+    margin-top: 30px;
+    outline: none;
+    border: none;
+    background-color: #097af9;
+    color: white;
+    font-size: 18px;
+
+}

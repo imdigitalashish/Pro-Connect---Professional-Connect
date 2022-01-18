@@ -1,0 +1,45 @@
+
+<h2>Edit Your Profile</h2>
+<div class="editProfileContainer">
+    <mat-form-field class="example-full-width">
+        <mat-label>First Name</mat-label>
+        <input type="text" [(ngModel)]="firstname" value="{{profileController.profileData['firstname']}}"
+            matInput placeholder="Ex. pat@example.com">
+    </mat-form-field><br>
+    <mat-form-field class="example-full-width">
+        <mat-label>Last Name</mat-label>
+        <input type="text" [(ngModel)]="lastname" value="{{profileController.profileData['lastname']}}" matInput
+            placeholder="Ex. pat@example.com">
+    </mat-form-field><br>
+    <mat-form-field class="example-full-width">
+        <mat-label>TagLine</mat-label>
+        <input type="text" [(ngModel)]="tagline" value="{{profileController.profileData['lastname']}}" matInput
+            placeholder="Ex. pat@example.com">
+    </mat-form-field><br>
+    <mat-form-field class="example-full-width">
+        <mat-label>Email</mat-label>
+        <input type="email" [(ngModel)]="email" value="{{profileController.profileData['email']}}" matInput
+            placeholder="Ex. pat@example.com">
+    </mat-form-field><br>
+    <mat-form-field class="example-full-width">
+        <mat-label>Mobile</mat-label>
+        <input type="number" [(ngModel)]="mobile" value="{{profileController.profileData['mobile']}}" matInput
+            placeholder="Ex. pat@example.com">
+    </mat-form-field><br>
+    <mat-form-field class="example-full-width">
+        <mat-label>DOB</mat-label>
+        <input type="date" [(ngModel)]="dob" matInput value="{{profileController.profileData['dob']}}"
+            placeholder="Ex. 12-14-2006">
+    </mat-form-field><br>
+    <mat-form-field class="example-full-width">
+        <mat-label>Country</mat-label>
+        <input type="text" [(ngModel)]="country" matInput value="{{profileController.profileData['country']}}"
+            placeholder="eg: INDIA">
+    </mat-form-field> <br>
+    <label for="file">Upload Profile Picture: </label>
+    <input (change)="addFileToProfileList($event)" type="file" id="file">
+    <br>
+    <!-- <button mat-raised-button color="primary" (click)="currentIndex=1">Save Profile</button> -->
+    <button type="button" class="btn btn-success" (click)="updateProfile()">Save Profile</button>
+
+</div>

@@ -1,0 +1,47 @@
+.commentContainer {
+    width: 40vw;
+}
+
+@media (max-width: 700px) {
+    .commentContainer {
+        width: 80vw !important;
+        height: 60vh !important;
+    }
+    .addComment > mat-form-field {
+        width: 60% !important;
+    }
+    .comment__postButton {
+        margin-right: 6% !important;
+    }
+}
+
+.commentHeading {
+    display: flex;
+    justify-content: space-between;
+}
+
+.addComment > img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.addComment > mat-form-field {
+    margin-left: 20px;
+    width: 90%;
+}
+
+.commentContent {
+    padding: 20px;
+}
+
+.singleCommentHolder {
+    display: flex;
+    align-items: center;
+
+}
+
+.comments {
+    height: 50vh;
+    overflow: scroll;
+}

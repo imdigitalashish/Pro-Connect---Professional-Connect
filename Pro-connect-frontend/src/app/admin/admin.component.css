@@ -1,0 +1,27 @@
+.mainContainer {
+    display: flex;
+}
+
+.leftSection {
+    flex: 0.6;
+    height: 100vh;
+    background-color: rgb(236, 226, 226);
+    margin: 20px;
+    display: flex;
+    padding: 30px;
+    justify-content: center;
+    text-align: center;
+}
+
+.leftSection p {
+    font-size: 20px;
+    user-select: none;
+    cursor: pointer;
+}
+
+.rightSection {
+    flex: 2;
+    height: 100vh;    
+    margin: 20px;
+
+}

@@ -1,0 +1,148 @@
+
+.uploadFile {
+    display: flex;
+    justify-content: center;
+}
+
+.uploadFileContent {
+    padding: 20px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.uploadFileContent > input[type='text'] {
+    padding: 10px;
+
+}
+
+.uploadFileContentContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.posts {
+    display: flex;
+    justify-content: center;
+}
+.singleCardComponent {
+    width:82%;
+    /* background-color: rgb(240, 232, 232); */
+    margin-bottom: 20px;
+    animation: postAnimation 1.7s forwards;
+    /* box-shadow: 2px 2px 2px 2px grey, -2px -2px -2px -2px grey; */
+}
+.card_info_and_stats {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+@keyframes postAnimation {
+
+    0% {
+        transform: scale(0.8);
+    }
+
+    100% {
+        transform: scale(1);
+
+    }
+
+    
+}
+.card__name {
+    justify-content: center;
+    background: white;
+    margin: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.card__name > img {
+
+    width: 100%;
+
+}
+
+.card__name > video {
+
+    width: 23vw;
+
+}
+
+
+
+.card__info {
+    padding: 9px;
+}
+
+.card__info__text {
+    font-size:0.8em;
+}
+
+
+
+.mainContainer {
+    padding: 12px;
+    display: flex;
+}
+
+.container__profileContainer {
+    flex: 0.4;
+}
+.container__listOfPostContainer {
+    flex: 1;
+}
+.container__SideBar {
+    flex: 0.3;
+}
+
+
+.card__content {
+    margin-top: 7vh;
+}
+
+.card__content > h2 {
+    display: flex;
+    justify-content: center;
+}
+
+.card__content > p {
+    display: flex;
+    justify-content: center;
+    font-style: italic;
+
+}
+
+.buttonContainers {
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+
+.cardInnerContent {
+    padding: 10px;
+}
+/* .container__listOfPostContainer::-webkit-scrollbar {
+    display: none;
+}
+.container__listOfPostContainer {
+    overflow: scroll;
+    height: 85vh;
+} */
+.container__SideBar::-webkit-scrollbar {
+    display: none;
+}
+
+.container__SideBar {
+    overflow: scroll;
+    height: 85vh;
+
+
+}
+
+
+

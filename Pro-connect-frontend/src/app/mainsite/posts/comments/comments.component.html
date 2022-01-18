@@ -1,0 +1,42 @@
+<div class="commentContainer">
+
+    <div class="commentHeading">
+        <h2>Comments</h2>
+        <div>
+            <mat-icon>sort</mat-icon>
+            <mat-icon (click)="closeDialog()">close</mat-icon>
+        </div>
+
+
+    </div>
+    <hr>
+    <div class="addComment">
+        <img src="{{this.appController.fileServerUrl}}{{this.profileService.profileData['photo_path']}}" alt="">
+        <mat-form-field appearance="outline">
+            <mat-label>Comment</mat-label>
+            <textarea [(ngModel)]="commentInput" matInput placeholder="Comment"></textarea>
+            <mat-icon matSuffix>comment</mat-icon>
+        </mat-form-field>
+        <div *ngIf="commentInput" style="display: flex;justify-content: end;" class="comment__postButton">
+            <button (click)="addACommentToPosts()" mat-flat-button color="primary">Post</button>
+
+        </div>
+
+    </div>
+
+    <hr>
+
+    <div *ngIf="this.commentService.isListOfCommentsFetched" class="comments">
+        <div class="singleCommentHolder" *ngFor="let a of this.commentService.listOfComments">
+            <img style="width: 50px; height: 50px;border-radius: 50%;" src="{{a.user_profile}}" alt="">
+            <div class="commentContent">
+                <h2>{{a.name_of_user}}</h2>
+                <p>{{a.comment}}</p>
+            </div>
+        </div>
+    </div>
+
+    <mat-spinner style="display: flex;justify-content: center;" *ngIf="!this.commentService.isListOfCommentsFetched">
+    </mat-spinner>
+
+</div>

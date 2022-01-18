@@ -1,0 +1,33 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">post id</th>
+        <th scope="col">user_id</th>
+        <th scope="col">name</th>
+        <th scope="col">text</th>
+        <th scope="col">media</th>
+        <th scope="col">likes</th>
+        <th scope="col">active</th>
+        <th scope="col">created_at</th>
+        <th scope="col">updated_at</th>
+        <th scope="col">activate/deactivate</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let post of adminService.listPosts">
+        <th>{{post["id"]}}</th>
+        <td>{{post["user_id"]}}</td>
+        <td>{{post["name"]}}</td>
+        <td>{{post["text"]}}</td>
+        <td>http://localhost:8000{{post["media"]}}</td>
+        <td>{{post["likes"]}}</td>
+        <td>{{post["active"]}}</td>
+        <td>{{post["created_at"]}}</td>
+        <td>{{post["updated_at"]}}</td>
+        <td *ngIf="post['active']"><button (click)="adminService.activate_or_deactivate_post('deactivate', post['id'])" class="btn btn-danger">Deactivate</button></td>
+        <td *ngIf="!post['active']"><button  (click)="adminService.activate_or_deactivate_post('activate', post['id'])" class="btn btn-success">Activate</button></td>
+      </tr>
+   
+    </tbody>
+  </table>

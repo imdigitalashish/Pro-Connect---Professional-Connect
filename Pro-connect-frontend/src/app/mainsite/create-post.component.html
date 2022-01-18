@@ -1,0 +1,24 @@
+<div *ngIf="appController.userLoggedIn" class="uploadFile">
+
+    <div class="uploadFileContent">
+        <div class="uploadFileContentContainer">
+            <mat-form-field style="width: 100%;" class="example-full-width" appearance="fill">
+                <mat-label>New Post Text</mat-label>
+                <textarea style="height: 30vh;" [(ngModel)]="postText" type="text" matInput placeholder="eg: This is my new post"></textarea>
+
+            </mat-form-field>
+            <label for="files">
+                <mat-icon aria-hidden="false" aria-label="Example home icon">attach_file</mat-icon>
+            </label>
+
+
+        </div>
+
+        <input class="btn btn-primary" (click)="load()" type="submit" value="Post" />
+
+        <input multiple id="files" style="visibility: hidden;" (change)="addFileToFileList($event)" type="file" /> <br>
+
+
+    </div>
+
+</div>
